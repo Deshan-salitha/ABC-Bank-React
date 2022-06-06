@@ -23,7 +23,7 @@ const Login = () => {
             console.log("response", res.data.body.jwt)
             console.log("user", res.data.body.user.uFName)
             localStorage.setItem('jwt', res.data.body.jwt)
-            localStorage.setItem('user', res.data.body.user.uFName)
+            localStorage.setItem('user', res.data.body.user)
             localStorage.setItem('userid', res.data.body.user.uID)
             if (res.data.body.user.userType == 'admin') {
                 console.log("type: Admin")

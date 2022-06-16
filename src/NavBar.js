@@ -1,4 +1,14 @@
+import { useNavigate } from "react-router-dom";
+
 const NavBar = () => {
+    const navigate = useNavigate();
+    const signout = (e) => {
+
+        localStorage.removeItem('jwt')
+        localStorage.removeItem('user')
+        localStorage.removeItem('userid')
+        navigate("/")
+    }
     return (
         <div class="h-screen  flex bg-gray-200">
             {/* <!-- container --> */}
@@ -187,7 +197,7 @@ const NavBar = () => {
                     {/* <!-- Action Section --> */}
                     <button
                         class="h-16 w-10 mx-auto flex flex justify-center items-center
-				w-full focus:text-orange-500 hover:bg-red-200 focus:outline-none">
+				w-full focus:text-orange-500 hover:bg-red-200 focus:outline-none" onClick={signout}>
                         <svg
                             class="h-5 w-5 text-red-700"
                             xmlns="http://www.w3.org/2000/svg"
